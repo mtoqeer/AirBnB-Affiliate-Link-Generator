@@ -1,5 +1,4 @@
 document.getElementById('msg').style.display = 'none';
-
 document.getElementById('airbnb-button').addEventListener('click', function(e){
 
     const link = document.getElementById('airbnb');
@@ -46,4 +45,3 @@ const copyToClipboard = str => {
     document.getSelection().addRange(selected);   // Restore the original selection
   }
 };
-
