@@ -1,8 +1,22 @@
+// Copy link
+document.getElementById('btncode').addEventListener('click', function(e){
+
+  const linkforbtncopy = document.getElementById('resultlink');
+
+  copyToClipboard(`[maxbutton id="4" url="${linkforbtncopy.innerHTML}" text="View on Air BnB"]`);
+
+  linkforbtncopy.innerHTML = '';
+
+
+  e.preventDefault();
+});
+
 document.getElementById('msg').style.display = 'none';
 document.getElementById('airbnb-button').addEventListener('click', function(e){
 
     const link = document.getElementById('airbnb');
     const msgdiv = document.getElementById('msg');
+    const linkforbtn = document.getElementById('resultlink');
 
     if(link.value === ''){
         msgdiv.style.display = 'block';
@@ -12,10 +26,11 @@ document.getElementById('airbnb-button').addEventListener('click', function(e){
             msgdiv.innerHTML = '';
         }, 6000);
     } else{
-        copyToClipboard(`http://airbnb.pvxt.net/c/1956590/264339/4273?u=${link.value}`);
-        link.value = '';
+        copyToClipboard(`http://airbnb.pvxt.net/c/1956590/264339/4273?u=${link.value}`)
         msgdiv.style.display = 'block';
         msgdiv.innerHTML = 'Link Has Been Generated and Copied Succfullly!';
+        linkforbtn.innerHTML = `http://airbnb.pvxt.net/c/1956590/264339/4273?u=${link.value}`;
+        link.value = '';
         setTimeout(() => {
             msgdiv.style.display = 'none';
             msgdiv.innerHTML = '';
