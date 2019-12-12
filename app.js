@@ -1,25 +1,36 @@
+document.getElementById('msg').style.display = 'none';
+
 // Copy link
 document.getElementById('btncode').addEventListener('click', function(e){
-
+  let msgdiv = document.getElementById('msg');
   const linkforbtncopy = document.getElementById('resultlink');
 
-  copyToClipboard(`[maxbutton id="4" url="${linkforbtncopy.innerHTML}" text="View on Air BnB"]`);
-
-  linkforbtncopy.innerHTML = '';
+  if(linkforbtncopy.innerHTML === ''){
+    msgdiv.style.display = 'block';
+    msgdiv.innerHTML = `<span style="color:red;">Please First Copy AirBnB Link!!!<span>`;
+    setTimeout(() => {
+        msgdiv.style.display = 'none';
+        msgdiv.innerHTML = '';
+    }, 6000);
+  } else {
+    copyToClipboard(`[maxbutton id="4" url="${linkforbtncopy.innerHTML}" text="View on Air BnB"]`);
+    linkforbtncopy.innerHTML = '';
+  }
+  
   
   e.preventDefault();
 });
 
-document.getElementById('msg').style.display = 'none';
+
 document.getElementById('airbnb-button').addEventListener('click', function(e){
 
     const link = document.getElementById('airbnb');
-    const msgdiv = document.getElementById('msg');
+    let msgdiv = document.getElementById('msg');
     const linkforbtn = document.getElementById('resultlink');
 
     if(link.value === ''){
         msgdiv.style.display = 'block';
-        msgdiv.innerHTML = 'Please Enter Link!!';
+        msgdiv.innerHTML = `<span style="color:red;">Please Enter Link<span>`;
         setTimeout(() => {
             msgdiv.style.display = 'none';
             msgdiv.innerHTML = '';
