@@ -10,7 +10,7 @@ document.getElementById('airbnb-button').addEventListener('click', function(e){
         setTimeout(() => {
             msgdiv.style.display = 'none';
             msgdiv.innerHTML = '';
-        }, 3000);
+        }, 6000);
     } else{
         copyToClipboard(`http://airbnb.pvxt.net/c/1956590/264339/4273?u=${link.value}`);
         link.value = '';
@@ -19,7 +19,7 @@ document.getElementById('airbnb-button').addEventListener('click', function(e){
         setTimeout(() => {
             msgdiv.style.display = 'none';
             msgdiv.innerHTML = '';
-        }, 3000);
+        }, 6000);
     }
 
     e.preventDefault();
