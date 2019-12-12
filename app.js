@@ -6,8 +6,7 @@ document.getElementById('btncode').addEventListener('click', function(e){
   copyToClipboard(`[maxbutton id="4" url="${linkforbtncopy.innerHTML}" text="View on Air BnB"]`);
 
   linkforbtncopy.innerHTML = '';
-
-
+  
   e.preventDefault();
 });
 
