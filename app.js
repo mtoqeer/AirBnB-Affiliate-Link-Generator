@@ -36,7 +36,7 @@ document.getElementById('airbnb-button').addEventListener('click', function(e){
             msgdiv.innerHTML = '';
         }, 6000);
     } else{
-        copyToClipboard(`http://airbnb.pvxt.net/c/1956590/264339/4273?u=${link.value}`)
+        copyToClipboard(`http://airbnb.pvxt.net/c/1956590/264339/4273?u=${link.value}`);
         msgdiv.style.display = 'block';
         msgdiv.innerHTML = 'Link Has Been Generated and Copied Succfullly!';
         linkforbtn.innerHTML = `http://airbnb.pvxt.net/c/1956590/264339/4273?u=${link.value}`;
